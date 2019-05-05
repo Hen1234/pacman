@@ -253,7 +253,7 @@ function setRightButton(event){
     // var selected= numBalls.options[numBalls.selectedIndex].value;
     // console.log(numBalls.value);
     
-    if(randomCheckBox=== true){
+    if(randomCheckBox.checked=== true){
         
        playAudio();
        Start();
