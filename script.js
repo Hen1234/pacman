@@ -449,6 +449,7 @@ jQuery(function($) {
 function welcomeFromMenu(){
 
     window.clearInterval(interval);
+    x.pause();
     hideWindows();
     $("#Welcome").show();
 }
@@ -456,6 +457,7 @@ function welcomeFromMenu(){
 function registerFromMenu(){
 
     window.clearInterval(interval);
+    x.pause();
     hideWindows();
     $("#Welcome").hide();
     document.getElementsByName("username").value="";
@@ -471,6 +473,7 @@ function registerFromMenu(){
 function loginFromMenu(){
 
     window.clearInterval(interval);
+    x.pause();
     hideWindows();
     $("#Welcome").hide();
     document.getElementById("uname1").value="";
@@ -484,6 +487,7 @@ function About()
 {
 
     window.clearInterval(interval);
+    x.pause();
     // hideWindows();
     // $("#Welcome").hide();
     var mymodel= document.getElementById('myModal');
