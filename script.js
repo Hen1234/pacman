@@ -582,7 +582,7 @@ function Start() {
     addEventListener("keyup", function (e) {
         keysDown[e.code] = false;
     }, false);
-	interval = setInterval(UpdatePosition, 1000);
+	interval = setInterval(UpdatePosition, 300);
 	// interval = setInterval(findAndUpdatePositionMonst, 1000);
 	// interval = setInterval(moveMonster, 1000);
 }
@@ -920,9 +920,9 @@ function UpdatePosition() {
 		}
         
     } 
-    if (score >= 20 && time_elapsed <= 10) {
-        pac_color = "green";
-    }
+    // if (score >= 20 && time_elapsed <= 10) {
+    //     pac_color = "green";
+    // }
     /////////////////////////////////////////////////////////////update final score line down
     if (score === 500) {
         // window.clearInterval(interval);
