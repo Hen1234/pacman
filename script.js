@@ -1106,7 +1106,12 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
 			
 			if(life==0){ //GIME OVER
                 
-                lblLife.value = life;
+                if(life=== (-1)){
+                    lblLife.value = 0; 
+                }else{
+                    lblLife.value = life;
+                }
+                
                 //life=3;
                 x.pause();
 				window.clearInterval(interval);
@@ -1132,8 +1137,13 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
 				
 				// pacX=i;
 				// pacY=j;
-				// board[pacX][pacY]=2;
-                lblLife.value = life;
+                // board[pacX][pacY]=2;
+                if(life=== (-1)){
+                    lblLife.value = 0; 
+                }else{
+                    lblLife.value = life;
+                }
+                // lblLife.value = life;
 				board[shape.i][shape.j]=0;
 				var empty = findRandomEmptyCell(board);
 				board[empty[0]][empty[1]]=2;
