@@ -582,7 +582,7 @@ function Start() {
     addEventListener("keyup", function (e) {
         keysDown[e.code] = false;
     }, false);
-	interval = setInterval(UpdatePosition, 200);
+	interval = setInterval(UpdatePosition, 500);
 	// interval = setInterval(findAndUpdatePositionMonst, 1000);
 	// interval = setInterval(moveMonster, 1000);
 }
