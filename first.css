@@ -305,15 +305,15 @@ span.validate  {
     cursor: pointer;
   }
 
-canvas{
+/* canvas{
 
     position: relative;
     /* background:; */
-    border: 8px solid transparent;
+   /*  border: 8px solid transparent;
     border-color: chocolate;
-    text-align: center;
+    text-align: center; */
 
-}
+/* }  */
 
 html{
 
@@ -321,3 +321,17 @@ html{
     min-height: 768;
 }
 
+#canvas{
+  
+    border: 8px solid transparent;
+    border-color: chocolate;
+    width: 50%;
+    padding: 3px 20px;
+    position: relative;
+    text-align: center;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
