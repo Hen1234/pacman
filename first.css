@@ -313,5 +313,11 @@ canvas{
     border-color: chocolate;
     text-align: center;
 
-}  
+}
+
+html{
+
+    min-width: 1366;
+    min-height: 768;
+}
 
