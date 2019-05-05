@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="first.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        
+    </head>
+    <body>
+           
+
+            <header>
+                Pacman
+                <img id = "logo" src =logo.jpg> 
+                <br/>
+                <ourNames href="#us">Osher Hen & Hen Mor</ourNames>
+                
+            </header>
+           
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">  
+      
+            <nav class="topnav">
+                <a href="#Welcome" onclick="welcomeFromMenu()" >Welcome</a>
+                <a href="#Register" onclick="registerFromMenu()">Register</a>
+                <a href="#Login" onclick="loginFromMenu()">Login</a>
+                <a href="#about" onclick="About()" >About</a>
+            </nav>
+
+            <content>
+
+                <div id="About">
+           
+                    <!-- The Modal -->
+                    <div  id="myModal" class="modal"> 
+                                  
+                         <!-- Modal body -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p style="text-align: center">Osher Hen & Hen Mor</p>
+                        </div>
+           
+                    </div>
+                </div> 
+                <div id="Welcome">
+                    <w href="#Welcome">Welcome</w> 
+                    <br/>
+                    <br/>
+                    <button type= "button" id="register" onclick="register()" >Register</button>
+                    <button type= "button" id="login" onclick="login()" >Login</button>
+                </div>
+
+                <div id="Register">
+                    
+                    <div id="wrap"> <!--wrap start-->
+                        <div id="wrap2">  <!--wrap2 start-->
+                           
+                            <h2 class="free_account">Create new account</h2> 
+                            
+                            <form action="process.php" method="post" id="register_form">
+                                
+                            <p class="validate_msg"></p>
+
+                            <p> <label for="userName">User Name</label> <input name="username" type="text" /> <span class="val_uname"></span> </p>
+                            <p> <label for="password">Password</label>  <input name="password" type="password" /> <span class="val_pass"></span> </p>
+                            <p> <label for="name">First Name</label> <input name="fname" type="text" /> <span class="val_fname"></span> </p> 
+                            <p> <label for="lname">Last Name</label>  <input name="lname" type="text" />  <span class="val_lname"></span> </p>
+                            <p> <label for="email">Your Email</label> <input name="email" type="text" /> <span class="val_email"></span> </p>                         
+                            <p> <label for="birth">Birth Date</label>  <input name="bday" type="date" /> <span class="val_bday"></span> </p>   
+                                             
+                           <!--  <input type="button" name="submit" >Submit </input> -->
+                            <input type= "button" name="submit" >Submit</button>
+                                                     
+                            </form>
+       
+                        </div>  <!--wrap2 end-->
+                    </div>  <!--wrap start-->
+
+                    <!-- User Name: 
+                    <input id= "uname" type="text"/>
+                    <br/>
+                    <br/>
+                    Password: 
+                    <input id= "pword" type="text"/>
+                    <br/>
+                    <br/>
+                    First Name: 
+                    <input id= "fname" type="text"/>
+                    <br/>
+                    <br/>
+                    Last Name: 
+                    <input id= "lname" type="text"/>
+                    <br/>
+                    <br/>
+                    Email: 
+                    <input id= "email" type="text"/>
+                    <br/>
+                    <br/>
+                    Date of birth: 
+                    <input id= "dob" type="text"/>
+                    <br/>
+                    <br/>
+                    <button type= "button" id="submit" onclick="checkValidation" >Submit</button> -->
+                      
+                </div>
+
+                <div id="Login">
+                    <br/>
+                    <br/>
+                    <b>User Name:</b> 
+                    <input id= "uname1" type="text"/>
+                    <br/>
+                    <br/>
+                    <b>Password:</b> 
+                    <input id= "pword1" type="text"/>
+                    <br/>
+                    <br/>
+                    <button type= "button" id="loginUser" onclick="checkUser()" >Login</button>
+
+                </div>
+
+                <div id="Game">
+                        <div id="SCORE">
+
+                                <br/>
+                                <br/>
+                                <b>USER NAME:</b> 
+                                <input id="usern" type="text"/>
+                                <br/>
+                                <b>SCORE:</b>
+                                <input id="lblScore" type="text"/>
+                                <br/>
+                                <b>TIME:</b>
+                                <input id="lblTime" type="text"/>
+                                <br/>
+                                <b>LIFE:</b>
+                                <input id="lblLife" type="text"/>
+                                <br/>
+                                <br/>
+
+                               <!--  <img id = "logo" src =logo.jpg>  -->
+                                <button type= "button" id="newGame" onclick="newGame()" >New Game</button>
+                                <br/>
+                                <br/>
+
+                        </div>
+                        <canvas id="canvas" height="600" width="600"></canvas>
+                </div>
+
+                <div id="Definitions">
+
+                    <h1><b>Settings Page</b></h1>
+                    <b>Please choose buttons for the Pacman game:</b>
+                    <br/>
+                    <br/>
+                    <label up="Up Button">Up Button:</label>
+                    <input type="text" id="up" onkeyup="setUpButton(event)">
+                    <br/>
+                    <br/>
+
+                    <label up="Down Button">Down Button:</label>
+                    <input type="text" id="Down" onkeyup="setDownButton(event)">
+                    <br/>
+                    <br/>
+                    <label up="Left Button">Left Button:</label>
+                    <input type="text" id="Left" onkeyup="setLeftButton(event)">
+                    <br/>
+                    <br/>
+                    <label up="Right Button">Right Button:</label>
+                    <input type="text" id="Right" onkeyup="setRightButton(event)">
+                    <br/>
+                    <br/>
+                    <b>Please choose num of balls for the game:</b>
+                    <input type="text" id="balls"  >
+
+                 <!--    <select id="balls">
+                        <option>50</option>
+                        <option>51</option>
+                        <option>52</option>
+                        <option>53</option>
+                        <option>54</option>
+                        <option>55</option>
+                        <option>56</option>
+                        <option>57</option>
+                        <option>58</option>
+                        <option>59</option>
+                        <option>60</option>
+                        <option>61</option>
+                        <option>62</option>
+                        <option>63</option>
+                        <option>64</option>
+                        <option>65</option>
+                        <option>66</option>
+                        <option>67</option>
+                        <option>68</option>
+                        <option>69</option>
+                        <option>70</option>
+                        <option>71</option>
+                        <option>72</option>
+                        <option>73</option>
+                        <option>74</option>
+                        <option>75</option>
+                        <option>76</option>
+                        <option>77</option>
+                        <option>78</option>
+                        <option>79</option>
+                        <option>80</option>
+                        <option>81</option>
+                        <option>82</option>
+                        <option>83</option>
+                        <option>84</option>
+                        <option>85</option>
+                        <option>86</option>
+                        <option>87</option>
+                        <option>88</option>
+                        <option>89</option>
+                        <option>90</option>
+                    </select> -->
+                   
+                    <br/>
+                    <br/>
+                    <b>Please choose the 5 points ball's color for the game:</b>
+                    <input onchange= "setColor5(this)" name="colorChosen5" type="color">
+                    <br/>
+                    <br/>
+                    <b>Please choose the 15 points ball's color for the game:</b>
+                    <input onchange= "setColor15(this)" name="colorChosen15" type="color">
+                    <br/>
+                    <br/>
+                    <b>Please choose the 25 points ball's color for the game:</b>
+                    <input onchange= "setColor25(this)" name="colorChosen25" type="color">
+                    <br/>
+                    <br/>
+                    <!-- constraint -->
+                    <b>Please choose the time for the game in seconds (minimun 60):</b>  
+                    <input type="text" id="time">                   
+                    <br/>
+                    <br/>
+                    <b>Please choose the num of the monsters:</b>
+                    <input type="text" id="monsters" >
+                   <!--  <select id="monsters" >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select> -->
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    Random<input type="checkbox" id="random" onclick="fillRandomFields()">
+
+
+                    <br/>
+                    <br/>
+                    <button type= "button" id="StartGame" onclick="collectData()" >Start Game</button>
+                    <audio id="myAudio">
+                        <source src="song.mp3" type="audio/mpeg">                  
+                    </audio>
+
+                                
+                </div>
+                
+        
+            </content>
+           <!--  <img id= "pacman" src="pacmanside.png"  width="500" height="400"> -->
+            <footer>
+                <p style="color:rgb(240, 108, 20);font-size:16px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Osher Hen & Hen Mor:  Osherhe@post.bgu.ac.il    hene@post.bgu.ac.il</p>
+            </footer>
+        
+        <script type="text/javascript" src="script.js"></script>
+
+    </body>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,317 @@
+header
+{
+    font: bold Georgia, serif;
+    font-size: 500%;
+    text-decoration: none;
+    color: black;
+    /* text-align: center; */
+    border-right: 1px solid rgb(159, 209, 207);
+}
+
+body 
+{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(247, 211, 144);
+}
+  
+.topnav 
+{
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.topnav a 
+{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.topnav a:hover 
+{
+    background-color: #ddd;
+    color: black;
+}
+  
+.topnav a.active 
+{
+    background-color: #4CAF50;
+    color: white;
+}
+  
+.topnav-right 
+{
+    float: right;
+}
+
+w
+{
+    font-size: 550%;
+    text-decoration: none;
+    color: orange;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+
+}
+#register
+{
+
+    /* font: bold 12px/30px Georgia, serif; */
+    font-size: 200%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+    font-weight: bold;
+}
+
+#login
+{
+
+    /* font: bold 12px/30px Georgia, serif; */
+    font-size: 200%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+    right: 100%;
+    font-weight: bold;
+}
+
+#loginUser
+{
+    font-size: 100%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+    right: 50%;
+    font-weight: bold;
+}
+
+
+
+#logo
+{
+    vertical-align: middle;
+    height: 60px;
+    margin-left: -2px;
+    size: 2px;
+}
+
+/* #pacman */
+/* { */
+  /*   float: left;
+	size: 5%;
+	border-radius: 100%;
+	z-index: 1; /* Stay on top */
+/* 	top: 0; /* Stay at the top */
+	/* left: 0;
+	position: relative; */ 
+
+/* } */
+
+ourNames
+{
+
+    font-size: 50%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+}
+
+#submit
+{
+
+    font-size: 100%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+    margin-left: 5%;
+}
+
+#loginUser
+{
+
+    font-size: 100%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-right: 1px solid rgb(159, 209, 207);
+    margin-left: 5%;
+}
+
+
+
+/* #wrap { 
+    width:820px; 
+    padding:20px; 
+    margin:20px auto;
+    background:#fff;
+    border:1px solid #cc;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+} */
+
+div#wrap2 {
+    border: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+    padding:15px;
+}
+h2.free_account {
+    color:orange;
+    display: block;
+    margin-bottom: 25px;
+}
+form#register_form label { 
+    display:inline-block; /* with block na */
+    width:125px;
+    font-weight:bold;
+}
+form#register_form label:after { 
+    content:":"
+}
+form#register_form input[type='text'], input[type='password'] { 
+    display:inline-block; /* with block na */
+    width:200px;
+    border:1px solid #ccc;
+    margin:0;
+    padding:5px;
+}
+form#register_form select {
+    border: 1px solid #CCCCCC;
+    display: inline-block;
+    margin: 0;
+    padding: 5px 0;
+    width: 68px;
+}
+form#register_form input[name='submit'] { 
+    border:1px solid orange;
+    background:orange;
+    border-radius: 5px;
+    margin:10px;
+    color:#FFF;
+    padding:5px;
+    font-weight:bold
+    
+}
+form#register_form input[name='submit'] { 
+    cursor:pointer;
+}
+/* p.validate_msg {
+    border: 1px solid #FF0000;
+    font-weight: bold;
+    padding: 10px;
+    display:none;
+    margin-bottom:25px
+} */
+span.validate  {
+    color:#F00;
+    padding-left:8px;
+    font-style:italic;
+}
+
+#newGame {
+    background-color: rgb(44, 38, 38); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    position:absolute;
+    transition: .5s ease;
+    top: 45%;
+    right: 60%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+  
+#newGame:hover {
+    background-color: rgb(206, 206, 206); /* Green */
+    color: white;
+}
+
+#StartGame
+{
+
+    background-color: rgb(44, 38, 38); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    position:absolute;
+    transition: .5s ease;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    top: 125%;
+    right: 80%;
+
+
+
+}
+
+#StartGame:hover {
+    background-color: rgb(206, 206, 206); /* Green */
+    color: white;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+ 
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+  }
+  
+
+  .close {
+    color:orange;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color:orange;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+canvas{
+
+    position: relative;
+    /* background:; */
+    border: 8px solid transparent;
+    border-color: chocolate;
+    text-align: center;
+
+}  
+
