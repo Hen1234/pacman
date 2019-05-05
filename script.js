@@ -104,6 +104,7 @@ function User(userName, password){
 //music
 var x = document.getElementById("myAudio"); 
 
+resolution();
 hideWindows();
 //Start();
 
@@ -1257,7 +1258,18 @@ function drawDrugs(){
 
 }
 
+function resolution(){
 
+    if((screen.width<1920) && (screen.height<1080)){
+
+        var b = document.getElementById("body");
+        b.style.zoom= "67.5%";
+    }else{
+
+        var b= document.getElementById("body");
+        b.style.zoom= "100%";
+    }
+}
 
 
 function playAudio() { 
