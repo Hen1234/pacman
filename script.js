@@ -1250,7 +1250,7 @@ function drawDrugs(){
 
 function playAudio() { 
   
-            
+            x.pause();
             x.play(); 
         
 } 
