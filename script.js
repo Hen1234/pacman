@@ -104,7 +104,7 @@ function User(userName, password){
 //music
 var x = document.getElementById("myAudio"); 
 
-resolution();
+
 hideWindows();
 //Start();
 
