@@ -29,7 +29,7 @@
                 <a href="#about" onclick="About()" >About</a>
             </nav>
 
-            <content>
+            <div id= "content">
 
                 <div id="About">
            
@@ -128,21 +128,32 @@
                 </div>
 
                 <div id="Game">
-                        <div id="SCORE">
-
-                                <br/>
-                                <br/>
-                                <b>USER NAME:</b> 
-                                <input id="usern" type="text"/>
-                                <br/>
-                                <b>SCORE:</b>
-                                <input id="lblScore" type="text"/>
-                                <br/>
-                                <b>TIME:</b>
-                                <input id="lblTime" type="text"/>
-                                <br/>
-                                <b>LIFE:</b>
-                                <input id="lblLife" type="text"/>
+                    <div id = "SCORE">
+                        <br>
+                        <div class = "line">
+                        <b>USER NAME:</b>
+                        </div>
+                        <div class = "line">
+                        <input id = "usern" type ="text">
+                        </div>
+                        <div class = "line">
+                        <b>SCORE:</b>
+                        </div>
+                        <div class = "line">
+                        <input id = "lblScore" type ="text">
+                        </div>
+                        <div class = "line">
+                        <b>TIME:</b>
+                        </div>
+                        <div class = "line">
+                        <input id = "lblTime" type ="text">
+                        </div>
+                        <div class = "line">
+                        <b>LIFE:</b>
+                        </div>
+                        <div class = "line">
+                        <input id = "lblLife" type ="text">
+                    </div>
 
                                <!--  <img id = "logo" src =logo.jpg>  -->
                                 <button type= "button" id="newGame" onclick="newGame()" >New Game</button>
@@ -158,23 +169,17 @@
                     <h1><b>Settings Page</b></h1>
                     <b>Please choose buttons for the Pacman game:</b>
                     <br/>
-                    <br/>
                     <label up="Up Button">Up Button:</label>
                     <input type="text" id="up" onkeyup="setUpButton(event)">
                     <br/>
-                    <br/>
-
                     <label up="Down Button">Down Button:</label>
                     <input type="text" id="Down" onkeyup="setDownButton(event)">
-                    <br/>
                     <br/>
                     <label up="Left Button">Left Button:</label>
                     <input type="text" id="Left" onkeyup="setLeftButton(event)">
                     <br/>
-                    <br/>
                     <label up="Right Button">Right Button:</label>
                     <input type="text" id="Right" onkeyup="setRightButton(event)">
-                    <br/>
                     <br/>
                     <b>Please choose num of balls for the game:</b>
                     <input type="text" id="balls"  >
@@ -223,24 +228,20 @@
                         <option>90</option>
                     </select> -->
                    
-                    <br/>
+                    
                     <br/>
                     <b>Please choose the 5 points ball's color for the game:</b>
                     <input onchange= "setColor5(this)" name="colorChosen5" type="color">
                     <br/>
-                    <br/>
                     <b>Please choose the 15 points ball's color for the game:</b>
                     <input onchange= "setColor15(this)" name="colorChosen15" type="color">
-                    <br/>
                     <br/>
                     <b>Please choose the 25 points ball's color for the game:</b>
                     <input onchange= "setColor25(this)" name="colorChosen25" type="color">
                     <br/>
-                    <br/>
                     <!-- constraint -->
                     <b>Please choose the time for the game in seconds (minimun 60):</b>  
                     <input type="text" id="time">                   
-                    <br/>
                     <br/>
                     <b>Please choose the num of the monsters:</b>
                     <input type="text" id="monsters" >
@@ -254,9 +255,6 @@
                     <br/>
 
                     Random<input type="checkbox" id="random" onclick="fillRandomFields()">
-
-
-                    <br/>
                     <br/>
                     <button type= "button" id="StartGame" onclick="collectData()" >Start Game</button>
                     <audio id="myAudio">
@@ -267,7 +265,7 @@
                 </div>
                 
         
-            </content>
+            </div>
            <!--  <img id= "pacman" src="pacmanside.png"  width="500" height="400"> -->
             <footer>
                 <p style="color:rgb(240, 108, 20);font-size:16px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Osher Hen & Hen Mor:  Osherhe@post.bgu.ac.il    hene@post.bgu.ac.il</p>
@@ -276,11 +274,7 @@
         <script type="text/javascript" src="script.js"></script>
 
     </body>
-
-
-
-
-
+    
 
 
 </html>

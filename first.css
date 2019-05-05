@@ -13,7 +13,17 @@ body
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(247, 211, 144);
+   /*  border: solid green; */
 }
+
+#content
+{
+    height: 450px;
+ /*    border: solid green; */ 
+
+
+}
+
   
 .topnav 
 {
@@ -98,7 +108,7 @@ w
 #logo
 {
     vertical-align: middle;
-    height: 60px;
+    height: 30px;
     margin-left: -2px;
     size: 2px;
 }
@@ -221,15 +231,15 @@ span.validate  {
     background-color: rgb(44, 38, 38); /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 28px;
+    font-size: 20px;
     position:absolute;
     transition: .5s ease;
-    top: 45%;
-    right: 60%;
+    top: 30%;
+    right: 85%;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
@@ -255,7 +265,7 @@ span.validate  {
     transition: .5s ease;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    top: 125%;
+    top: 75%;
     right: 80%;
 
 
@@ -315,6 +325,11 @@ span.validate  {
 
 /* }  */
 
+div.line{
+    display: inline;
+  
+}
+
 html{
 
     min-width: 1366;
@@ -325,14 +340,22 @@ html{
   
     border: 8px solid transparent;
     border-color: chocolate;
-    width: 300px;
-    height: 300px;
+  /*   text-align: center;  */
+  /*   right: 30%; */
+  /*   left:30%; */
+    width: 400px;
+    height: 400px;
    /*  padding: 3px 20px; */
-    /* position: relative; */
+    position: fixed;
    /*  text-align: center; */
-    top:0;
+    left:30%;
+    top:25%;
     bottom: 0;
-    left: 0;
     right: 0;
 /*     margin:auto; */
+}
+
+footer{
+
+    top: 500px;
 }
