@@ -1169,6 +1169,8 @@ function moveMonster(monster, pacX, pacY){
 function newGame(){
 
 
+    window.clearInterval(interval);
+    x.pause();
 	monster1.x=0;
 	monster1.y=0;
 	monster2.x=0;
