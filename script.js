@@ -448,12 +448,14 @@ jQuery(function($) {
 //change 4 functions of menu **********************&&&&&&&&&&&&&&&&&&&&&&&&&*******************
 function welcomeFromMenu(){
 
+    window.clearInterval(interval);
     hideWindows();
     $("#Welcome").show();
 }
 
 function registerFromMenu(){
 
+    window.clearInterval(interval);
     hideWindows();
     $("#Welcome").hide();
     document.getElementsByName("username").value="";
@@ -468,6 +470,7 @@ function registerFromMenu(){
 
 function loginFromMenu(){
 
+    window.clearInterval(interval);
     hideWindows();
     $("#Welcome").hide();
     document.getElementById("uname1").value="";
@@ -480,6 +483,7 @@ function loginFromMenu(){
 function About()
 {
 
+    window.clearInterval(interval);
     // hideWindows();
     // $("#Welcome").hide();
     var mymodel= document.getElementById('myModal');
