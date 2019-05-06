@@ -24,6 +24,11 @@ memoForZero.push(9);
 memoForZero.push(0);
 memoForZero.push(9);
 
+//vars for random colors
+var randomColor5;
+var randomColor15;
+var randomColor25;
+
 //image of humburger
 var humbur = new Image();
 humbur.src = "humbur.png";
@@ -317,33 +322,33 @@ function fillRandomFields(){
         document.getElementById("Left").value= "ArrowLeft";
         document.getElementById("Right").value= "ArrowRight";
         document.getElementById("balls").value= getRandomArbitrary(60,90);
-
-        // RandomColors = new Array();
-        // RandomColors.push("black");
-        // RandomColors.push("yellow");
-        // RandomColors.push("red");
-        // RandomColors.push("blue");
-        // RandomColors.push("green");
-        // RandomColors.push("pink");
-        // RandomColors.push("orange");
-        // RandomColors.push("gray");
-        // RandomColors.push("brown");
-        // RandomColors.push("gold");
-        // RandomColors.push("lime");
-        // RandomColors.push("navy");
-        // RandomColors.push("olive");
-        // RandomColors.push("plum");
-        // RandomColors.push("silver");
-        // i = getRandomInt(14);
-        // document.getElementById("colorChosen5").value = RandomColors[getRandomInt(14)];
-        // i = getRandomInt(14);
-        // document.getElementById("colorChosen15").value = RandomColors[getRandomInt(14)];
-        // i = getRandomInt(14);
-        // document.getElementById("colorChosen25").value = RandomColors[getRandomInt(14)];
-
         document.getElementById("time").value= getRandomArbitrary(60,100);
-
         document.getElementById("monsters").value= getRandomArbitrary(1,3);
+
+        //choose random colors
+        var letters = '0123456789ABCDEF';
+        randomColor5 = '#';
+        randomColor15 = '#';
+        randomColor25 = '#';
+
+        for (var i = 0; i < 6; i++) {
+            randomColor5 += letters[Math.floor(Math.random() * 16)];
+            randomColor15 += letters[Math.floor(Math.random() * 16)];
+            randomColor25 += letters[Math.floor(Math.random() * 16)];
+        }
+
+        while(randomColor5==randomColor15 || randomColor15 == randomColor25|| randomColor15==randomColor25 ){
+            for (var i = 0; i < 6; i++) {
+                randomColor5 += letters[Math.floor(Math.random() * 16)];
+                randomColor15 += letters[Math.floor(Math.random() * 16)];
+                randomColor25 += letters[Math.floor(Math.random() * 16)];
+            }
+        }
+
+        document.getElementById("color5").value=randomColor5;
+        document.getElementById("color15").value=randomColor15;
+        document.getElementById("color25").value=randomColor25;
+
      }
 }  
 
@@ -680,41 +685,12 @@ for (var i = 0; i < 10; i++) {
 }
 
 function initColorArrayRandom(){
-    var i =0;
-    RandomColors = new Array();
-    RandomColors.push("black");
-    RandomColors.push("yellow");
-    RandomColors.push("red");
-    RandomColors.push("blue");
-    RandomColors.push("green");
-    RandomColors.push("pink");
-    RandomColors.push("orange");
-    RandomColors.push("gray");
-    RandomColors.push("brown");
-    RandomColors.push("gold");
-    RandomColors.push("lime");
-    RandomColors.push("navy");
-    RandomColors.push("olive");
-    RandomColors.push("plum");
-    RandomColors.push("silver");
-    i = getRandomInt(14);
-    ballsColor5 = RandomColors[getRandomInt(14)];
-    i = getRandomInt(14);
-    ballsColor15 = RandomColors[getRandomInt(14)];
-    i = getRandomInt(14);
-    ballsColor25 = RandomColors[getRandomInt(14)];
-    
-    while(ballsColor5==ballsColor15 || ballsColor15 == ballsColor25|| ballsColor15==ballsColor25 ){
-    ballsColor5 = RandomColors[getRandomInt(14)];
-    ballsColor15 = RandomColors[getRandomInt(14)];
-    ballsColor25 = RandomColors[getRandomInt(14)];
-    }
-
+   
     var colorsByNumbers = new Array();
     var index =0;
-    colorsByNumbers.push(ballsColor5); /// color 1 - the most
-    colorsByNumbers.push(ballsColor15); // color 2
-    colorsByNumbers.push(ballsColor25); // color 3 - the least 
+    colorsByNumbers.push(randomColor5); /// color 1 - the most
+    colorsByNumbers.push(randomColor15); // color 2
+    colorsByNumbers.push(randomColor25); // color 3 - the least 
     var ballNumbers = new Array();
     ballNumbers.push(Math.floor(numOfBalls * 0.6)); // num5 * 0.6
     ballNumbers.push(Math.floor(numOfBalls * 0.3)); // num15 * 0.3
