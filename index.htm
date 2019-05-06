@@ -159,6 +159,9 @@
                                 <button type= "button" id="newGame" onclick="newGame()" >New Game</button>
                                 <br/>
                                 <br/>
+                                <button type= "button" id="Settings" onclick="SettingsPage()" >Settings Page</button>
+                                <br/>
+                                <br/>
 
                         </div>
                         <canvas id="canvas" height="600" width="600"></canvas>
@@ -231,13 +234,13 @@
                     
                     <br/>
                     <b>Please choose the 5 points ball's color for the game:</b>
-                    <input onchange= "setColor5(this)" name="colorChosen5" type="color">
+                    <input id="color5" onchange= "setColor5(this)" name="colorChosen5" type="color">
                     <br/>
                     <b>Please choose the 15 points ball's color for the game:</b>
-                    <input onchange= "setColor15(this)" name="colorChosen15" type="color">
+                    <input id="color15" onchange= "setColor15(this)" name="colorChosen15" type="color">
                     <br/>
                     <b>Please choose the 25 points ball's color for the game:</b>
-                    <input onchange= "setColor25(this)" name="colorChosen25" type="color">
+                    <input id="color25" onchange= "setColor25(this)" name="colorChosen25" type="color">
                     <br/>
                     <!-- constraint -->
                     <b>Please choose the time for the game in seconds (minimun 60):</b>  

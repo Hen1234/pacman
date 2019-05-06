@@ -153,6 +153,7 @@ function register(){
 
             hideWindows();
             $("#Welcome").hide();
+            clearDefinitions();
             $("#Definitions").show();
             //assignment to the user name field
             usern.value = uname;
@@ -1278,4 +1279,34 @@ function playAudio() {
             x.play(); 
         
 } 
+
+function SettingsPage(){
+
+    x.pause();
+    window.clearInterval(interval);
+    hideWindows();
+    $("#Welcome").hide();
+    clearDefinitions();
+    $("#Definitions").show();
+
+}
+
+function clearDefinitions(){
+
+    document.getElementById("up").value="";
+    document.getElementById("Down").value="";
+    document.getElementById("Left").value="";
+    document.getElementById("Right").value="";
+    document.getElementById("balls").value="";
+    document.getElementById("time").value="";
+    document.getElementById("random").checked=false;
+    document.getElementById("monsters").value="";
+    document.getElementById("color5").value="";
+    document.getElementById("color15").value="";
+    document.getElementById("color25").value="";
+
+
+
+
+}
         

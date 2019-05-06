@@ -231,7 +231,7 @@ span.validate  {
     background-color: rgb(44, 38, 38); /* Green */
     border: none;
     color: white;
-    padding: 15px 25px;
+    padding: 15px 37px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -338,7 +338,7 @@ html{
 
 #canvas{
   
-    border: 8px solid transparent;
+    border: 4px solid transparent;
     border-color: chocolate;
   /*   text-align: center;  */
   /*   right: 30%; */
@@ -353,6 +353,29 @@ html{
     bottom: 0;
     right: 0;
 /*     margin:auto; */
+}
+
+#Settings {
+    background-color: rgb(44, 38, 38); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    right: 85%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+  
+#Settings:hover {
+    background-color: rgb(206, 206, 206); /* Green */
+    color: white;
 }
 
 footer{
