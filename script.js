@@ -1233,7 +1233,8 @@ function drawDrugs(){
     
     context.drawImage(drugs, x*60, y*60, 50, 50);
     if(x===shape.i && y===shape.j){
-		life=life+1;
+        life=life+1;
+        lblLife.value = life;
 		drawDrugs= false;
 	}
 
