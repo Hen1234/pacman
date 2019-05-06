@@ -1230,7 +1230,12 @@ function drawDrugs(){
 		x = Math.floor((Math.random() * 9) + 1);
 		y = Math.floor((Math.random() * 9) + 1);
 	}
-	context.drawImage(drugs, x*60, y*60, 50, 50);
+    
+    context.drawImage(drugs, x*60, y*60, 50, 50);
+    if(x===shape.i && y===shape.j){
+		life=life+1;
+		drawDrugs= false;
+	}
 
 
 }
