@@ -10,7 +10,15 @@ header
 
 body 
 {
-    margin: 0;
+   
+    background-image: url("pacmanside.png");
+	background-size: 30% 70%;
+	size: 30%;
+	background-repeat: no-repeat;
+  	background-position: right center;
+	background-attachment: fixed;
+   
+   /*  margin: 0; */
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(247, 211, 144);
    /*  border: solid green; */
@@ -265,7 +273,7 @@ span.validate  {
     transition: .5s ease;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    top: 75%;
+    top: 85%;
     right: 80%;
 
 
@@ -382,3 +390,6 @@ footer{
 
     top: 500px;
 }
+
+
+
