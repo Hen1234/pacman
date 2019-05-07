@@ -121,17 +121,6 @@ w
     size: 2px;
 }
 
-/* #pacman */
-/* { */
-  /*   float: left;
-	size: 5%;
-	border-radius: 100%;
-	z-index: 1; /* Stay on top */
-/* 	top: 0; /* Stay at the top */
-	/* left: 0;
-	position: relative; */ 
-
-/* } */
 
 ourNames
 {
@@ -165,17 +154,6 @@ ourNames
     margin-left: 5%;
 }
 
-
-
-/* #wrap { 
-    width:820px; 
-    padding:20px; 
-    margin:20px auto;
-    background:#fff;
-    border:1px solid #cc;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-} */
 
 div#wrap2 {
    /*  border: 1px solid #CCCCCC; */
@@ -223,13 +201,7 @@ form#register_form button[name='submit'] {
 form#register_form button[name='submit'] { 
     cursor:pointer;
 }
-/* p.validate_msg {
-    border: 1px solid #FF0000;
-    font-weight: bold;
-    padding: 10px;
-    display:none;
-    margin-bottom:25px
-} */
+
 span.validate  {
     color:#F00;
     padding-left:8px;
@@ -324,15 +296,6 @@ span.validate  {
     cursor: pointer;
   }
 
-/* canvas{
-
-    position: relative;
-    /* background:; */
-   /*  border: 8px solid transparent;
-    border-color: chocolate;
-    text-align: center; */
-
-/* }  */
 
 div.line{
     display: inline;
