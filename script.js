@@ -107,8 +107,10 @@ function User(userName, password){
 }
 
 //music
-var x = document.getElementById("myAudio"); 
+var musicPlay = document.getElementById("myAudio"); 
 
+//var for count monster's steps
+var monsterSterps=0;
 
 hideWindows();
 //Start();
@@ -216,6 +218,14 @@ function setRightButton(event){
     document.getElementById("uname1").value="";
     document.getElementById("pword1").value="";
     $("#Login").show();
+ }
+
+ function submitToLogin(){
+
+    hideWindows();
+    $("#Welcome").hide();
+    $("#Login").show();
+
  }
 
  function setColor5(event){
@@ -337,7 +347,7 @@ function fillRandomFields(){
             randomColor25 += letters[Math.floor(Math.random() * 16)];
         }
 
-        while(randomColor5==randomColor15 || randomColor15 == randomColor25|| randomColor15==randomColor25 ){
+        while(randomColor5===randomColor15 || randomColor15 === randomColor25|| randomColor5===randomColor25 ){
             for (var i = 0; i < 6; i++) {
                 randomColor5 += letters[Math.floor(Math.random() * 16)];
                 randomColor15 += letters[Math.floor(Math.random() * 16)];
@@ -356,7 +366,7 @@ function fillRandomFields(){
 jQuery(function($) {
     var validation_holder;
     
-    $("form#register_form input[name='submit']").click(function() {
+    $("form#register_form button[name='submit']").click(function() {
     
     var validation_holder = 0;
     
@@ -444,6 +454,7 @@ jQuery(function($) {
         validation_holder = 0; // else return true
         //put the user in the userArray
         users.push(new User(uname, password));
+        submitToLogin();
         /* validation end */    
     }); // click end 
 
@@ -456,7 +467,7 @@ jQuery(function($) {
 function welcomeFromMenu(){
 
     window.clearInterval(interval);
-    x.pause();
+    musicPlay.pause();
     hideWindows();
     $("#Welcome").show();
 }
@@ -464,7 +475,7 @@ function welcomeFromMenu(){
 function registerFromMenu(){
 
     window.clearInterval(interval);
-    x.pause();
+    musicPlay.pause();
     hideWindows();
     $("#Welcome").hide();
     document.getElementsByName("username").value="";
@@ -480,7 +491,7 @@ function registerFromMenu(){
 function loginFromMenu(){
 
     window.clearInterval(interval);
-    x.pause();
+    musicPlay.pause();
     hideWindows();
     $("#Welcome").hide();
     document.getElementById("uname1").value="";
@@ -494,7 +505,7 @@ function About()
 {
 
     window.clearInterval(interval);
-    x.pause();
+    musicPlay.pause();
     // hideWindows();
     // $("#Welcome").hide();
     var mymodel= document.getElementById('myModal');
@@ -550,7 +561,7 @@ function Start() {
             //     board[i][j] = 7;
             //     continue;
             //}
-            if ((i === 3 && j === 3) || (i === 3 && j === 4) || (i === 3 && j === 5) || (i === 6 && j === 1) || (i === 6 && j === 2)) {
+            if ( (i === 7 && j === 7) ||(i === 7 && j === 8) || (i === 3 && j === 4) || (i === 3 && j === 5) || (i === 6 && j === 1) || (i === 6 && j === 2)) {
                 board[i][j] = 4;
             } else {
                 var randomNum = Math.random();
@@ -716,6 +727,16 @@ for (var i = 0; i < 10; i++) {
 }
 
 function Draw() {
+
+               ////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed
+               var countfood = countFood();
+               if (countfood==0){
+                   musicPlay.pause();
+                   window.clearInterval(interval);
+                   window.alert("You Won! - No More Balls Remain");
+                   window.clearInterval(interval);
+               }
+               ////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed
             context.clearRect(0, 0, canvas.width, canvas.height); //clean board
             lblScore.value = score;
             lblTime.value = time_elapsed;
@@ -897,7 +918,7 @@ function UpdatePosition() {
     var currentTime = new Date();
     time_elapsed = (currentTime - start_time) / 1000;
 	if (time_elapsed >= gameTime) {
-        x.pause();
+        musicPlay.pause();
 		window.clearInterval(interval);
 		if(score<150){
 			window.alert("You can do better "+score+" points" );
@@ -1014,13 +1035,20 @@ function UpdatePosition() {
 
 function findAndUpdatePositionMonst(monster,pacX, pacY){
 
+    if(monster.x=== pacX && monster.y===pacY){
+        console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+        meetPacman(monster, pacX, pacY);
+      
+    }
+  
 	var dUp=10000;
 	var dDown=10000;
 	var dLeft=10000;
 	var dRight=10000;
 
-		
-		//up
+    var minimumDistance= -1;
+        
+        //up
 		if(monster.y-1>=0 && board[monster.x][monster.y-1]!=4){
 
 			dUp = Math.sqrt(Math.pow(monster.x-pacX,2)+Math.pow(monster.y-1-pacY,2));
@@ -1043,8 +1071,31 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
 	
 			dRight = Math.sqrt(Math.pow(monster.x+1-pacX,2)+Math.pow(monster.y-pacY,2));
 		}
+        
+        if(monsterSterps== 18)
+        {   
+            var tempArray = [dUp, dDown, dLeft, dRight];
+            var tempIndex= Math.floor(Math.random()*3);
+       
+            var randomStep= tempArray[tempIndex];
+            while(randomStep==10000){
+                
+                tempIndex= Math.floor(Math.random()*3);
+                randomStep= tempArray[tempIndex];
+            }
 
-		var minimumDistance= Math.min(dUp, dDown, dLeft, dRight);
+            monsterSterps=0;
+            minimumDistance= randomStep;
+    
+
+        }	
+        else{
+
+
+            minimumDistance= Math.min(dUp, dDown, dLeft, dRight);
+
+        }
+	
 
 		//if pacman in close cell
 		var ans= checkPacman(monster,pacX, pacY);
@@ -1052,29 +1103,59 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
 
 			minimumDistance= ans;
 			
-		}
+        }
+        
+        if(dUp===dDown && minimumDistance===dUp){
 
-		if(minimumDistance ===  dUp){
-	
-			monster.y= monster.y-1;
-			
-		}
-		else if(minimumDistance=== dDown){
-			
-			monster.y= monster.y+1;
-			
-		}
-		else if(minimumDistance ===dLeft){
-			monster.x= monster.x-1;
-			
-		
-		}
-		else if(minimumDistance === dRight){
-			monster.x= monster.x+1;
-			
-		}
+            var r= Math.floor(Math.random()*2);
+            console.log("r:"+r);
+            while(r===2){
+                r=Math.floor(Math.random()*2);
+            }
+            if(r===1){
+                console.log("chooseUp");
+                monster.y= monster.y-1;  
+            }else{
+                console.log("chooseDown");
+                monster.y= monster.y+1;
+            }
 
-		//if meet the pacman
+
+        }
+
+        else{
+            if(minimumDistance ===  dUp){
+        
+                monster.y= monster.y-1;
+                
+            }
+            else if(minimumDistance=== dDown){
+                
+                monster.y= monster.y+1;
+                
+            }
+            else if(minimumDistance ===dLeft){
+                monster.x= monster.x-1;
+                
+            
+            }
+            else if(minimumDistance === dRight){
+                monster.x= monster.x+1;
+                
+            }
+            
+        }
+
+        
+        meetPacman(monster, pacX, pacY);
+   
+
+
+}
+
+function meetPacman(monster, pacX, pacY){
+
+         //if meet the pacman
 		if(monster.x=== pacX && monster.y===pacY){		
 			//moveMonster(monster,pacX, pacY);
 
@@ -1091,7 +1172,7 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
                 }
                 
                 //life=3;
-                x.pause();
+                musicPlay.pause();
 				window.clearInterval(interval);
 				window.alert("You Lost!");
 				window.clearInterval(interval);
@@ -1144,13 +1225,13 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
 			
 		}
 
-
 }
 
 function moveMonster(monster, pacX, pacY){
 
 	//draw monster
-	context.drawImage(monster.picture, 9,9,420,400, monster.x*60,monster.y*60,50,50);
+    context.drawImage(monster.picture, 9,9,420,400, monster.x*60,monster.y*60,50,50);
+    monsterSterps++;
 
 }
 
@@ -1158,7 +1239,7 @@ function newGame(){
 
 
     window.clearInterval(interval);
-    x.pause();
+    musicPlay.pause();
 	monster1.x=0;
 	monster1.y=0;
 	monster2.x=0;
@@ -1257,14 +1338,14 @@ function resolution(){
 
 function playAudio() { 
   
-            x.pause();
-            x.play(); 
+            musicPlay.pause();
+            musicPlay.play(); 
         
 } 
 
 function SettingsPage(){
 
-    x.pause();
+    musicPlay.pause();
     window.clearInterval(interval);
     hideWindows();
     $("#Welcome").hide();
@@ -1291,4 +1372,19 @@ function clearDefinitions(){
 
 
 }
+
+////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed
+
+function countFood(){
+    var countFood = 0;
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            if (board[i][j]==1)
+            countFood++;
+        }
+    }
+    return countFood;
+}
+
+////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed////
         

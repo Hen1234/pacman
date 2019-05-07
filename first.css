@@ -72,7 +72,7 @@ w
     text-decoration: none;
     color: orange;
     text-align: center;
-    border-right: 1px solid rgb(159, 209, 207);
+  /*   border-right: 1px solid rgb(159, 209, 207); */
 
 }
 #register
@@ -178,7 +178,7 @@ ourNames
 } */
 
 div#wrap2 {
-    border: 1px solid #CCCCCC;
+   /*  border: 1px solid #CCCCCC; */
     margin-bottom: 10px;
     padding:15px;
 }
@@ -209,17 +209,18 @@ form#register_form select {
     padding: 5px 0;
     width: 68px;
 }
-form#register_form input[name='submit'] { 
+form#register_form button[name='submit'] { 
     border:1px solid orange;
     background:orange;
     border-radius: 5px;
     margin:10px;
     color:#FFF;
     padding:5px;
-    font-weight:bold
+    font-weight:bold;
+    width:80px;
     
 }
-form#register_form input[name='submit'] { 
+form#register_form button[name='submit'] { 
     cursor:pointer;
 }
 /* p.validate_msg {
