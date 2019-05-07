@@ -118,7 +118,6 @@ hideWindows();
 function register(){
     
     hideWindows();
-    //change*********************************&&&&&&&&&&&&&&&&&&&&&************************
     $("#Welcome").hide();
     document.getElementsByClassName("val_uname").value="";
     document.getElementsByName("password").value="";
@@ -211,7 +210,7 @@ function setRightButton(event){
     
 }
 
-//change*********************************&&&&&&&&&&&&&&&&&&&&&&&***********************
+
  function login(){
     hideWindows();
     $("#Welcome").hide();
@@ -244,31 +243,15 @@ function setRightButton(event){
 
  function collectData() {
  
-        // numOfBalls = getRandomArbitrary(60,90);
-        // numOfMonsters =  getRandomArbitrary(1,3);
-        // gameTime = getRandomArbitrary(60,100);
-       
-
     randomCheckBox = document.getElementById("random");
     numOfBalls = document.getElementById("balls").value;
     numOfMonsters = document.getElementById("monsters").value;
-    /* ballsColor5= document.getElementById("colorChosen5").value;     
-    ballsColor15= document.getElementById("colorChosen15").value;
-    ballsColor25= document.getElementById("colorChosen25").value; */
     gameTime = document.getElementById("time").value;
     
-    
-    //change*******************************************&&&&&&&&&&&&&&&&&&&&&&&&&&&&************8
 	var error= false;
     drawHambur = true;
     life=3;
     lblLife.value = 3;
-  
-    
-    //check the whole fields are full
-    // var numBalls = document.getElementById("balls");
-    // var selected= numBalls.options[numBalls.selectedIndex].value;
-    // console.log(numBalls.value);
     
     if(randomCheckBox.checked=== true){
         
@@ -461,9 +444,6 @@ jQuery(function($) {
 }); // jQuery End
 
 
-
-
-//change 4 functions of menu **********************&&&&&&&&&&&&&&&&&&&&&&&&&*******************
 function welcomeFromMenu(){
 
     window.clearInterval(interval);
@@ -549,18 +529,6 @@ function Start() {
         board[i] = new Array();
         //put obstacles in (i=3,j=3) and (i=3,j=4) and (i=3,j=5), (i=6,j=1) and (i=6,j=2)
         for (var j = 0; j < 10; j++) {
-            // if (i===0 && j ===0){ // initial cordinates for monsters
-            //     board[i][j] = 9;
-            //     continue;
-            // }
-            // if (i===9 && j===9){ // initial cordinates for monsters
-            //     board[i][j] = 8;
-            //     continue;
-            // }
-            // if (i===0 && j===9){ // initial cordinates for monsters
-            //     board[i][j] = 7;
-            //     continue;
-            //}
             if ( (i === 7 && j === 7) ||(i === 7 && j === 8) || (i === 3 && j === 4) || (i === 3 && j === 5) || (i === 6 && j === 1) || (i === 6 && j === 2)) {
                 board[i][j] = 4;
             } else {
@@ -568,11 +536,7 @@ function Start() {
                 if (randomNum <= 1.0 * food_remain / cnt) {
                     food_remain--;
                     board[i][j] = 1;
-                // } else if (randomNum < 1.0 * (pacman_remain + food_remain) / cnt) {
-                //     shape.i = i;
-                //     shape.j = j;
-                //     pacman_remain--;
-                //     board[i][j] = 2;
+
                 } else {
                     board[i][j] = 0;
                 }
@@ -728,7 +692,7 @@ for (var i = 0; i < 10; i++) {
 
 function Draw() {
 
-               ////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed
+             
                var countfood = countFood();
                if (countfood==0){
                    musicPlay.pause();
@@ -736,7 +700,7 @@ function Draw() {
                    window.alert("You Won! - No More Balls Remain");
                    window.clearInterval(interval);
                }
-               ////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed
+ 
             context.clearRect(0, 0, canvas.width, canvas.height); //clean board
             lblScore.value = score;
             lblTime.value = time_elapsed;
@@ -861,15 +825,7 @@ function Draw() {
 					 
 									context.fill();
 					}				
-                    // }  else if (board[i][j] === 9) { // Monster
-                    //                 context.drawImage(monst1,0 , 0, 967, 1111, i*60, j*60, 50, 50);
-                    // } 
-                    // else if (board[i][j] === 8 && numOfMonsters!=1) { // Monster
-                    //                 context.drawImage(monst2,0 , 9, 967, 1111, i*60, j*60, 50, 50);
-                    // } 
-                    // else if (board[i][j] === 7 && numOfMonsters==3) { // Monster
-                    //                 context.drawImage(monst3,9 , 9, 967, 1111, i*60, j*60, 50, 50);
-                    // } 
+
                 }
             }
 }
@@ -1036,7 +992,6 @@ function UpdatePosition() {
 function findAndUpdatePositionMonst(monster,pacX, pacY){
 
     if(monster.x=== pacX && monster.y===pacY){
-        console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         meetPacman(monster, pacX, pacY);
       
     }
@@ -1108,15 +1063,12 @@ function findAndUpdatePositionMonst(monster,pacX, pacY){
         if(dUp===dDown && minimumDistance===dUp){
 
             var r= Math.floor(Math.random()*2);
-            console.log("r:"+r);
             while(r===2){
                 r=Math.floor(Math.random()*2);
             }
             if(r===1){
-                console.log("chooseUp");
                 monster.y= monster.y-1;  
             }else{
-                console.log("chooseDown");
                 monster.y= monster.y+1;
             }
 
@@ -1181,22 +1133,6 @@ function meetPacman(monster, pacX, pacY){
 
 			}else{ //START OVER
 				
-				// board[monster.x][monster.y]=0;
-				// board[pacY][pacX]=0;
-				// board[pacX][pacY]=0;
-
-				// var i = Math.floor((Math.random() * 9) + 1);
-				// var j = Math.floor((Math.random() * 9) + 1);
-				// while (board[i][j] == 4) {
-				// 	i = Math.floor((Math.random() * 9) + 1);
-				// 	j = Math.floor((Math.random() * 9) + 1);
-				// }
-				
-
-				
-				// pacX=i;
-				// pacY=j;
-                // board[pacX][pacY]=2;
                 if(life=== (-1)){
                     lblLife.value = 0; 
                 }else{
@@ -1373,7 +1309,7 @@ function clearDefinitions(){
 
 }
 
-////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed
+
 
 function countFood(){
     var countFood = 0;
@@ -1386,5 +1322,4 @@ function countFood(){
     return countFood;
 }
 
-////////////////////////////////////////////////<<<<<<<<<<<<<<------------------ changed////
         
